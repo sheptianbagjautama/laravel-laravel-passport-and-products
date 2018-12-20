@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "9939b670-351c-447a-a675-3eab41357a17",
+		"name": "Restful API Passport & Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api/register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "LtVRM2QiqOs54qGQEf4q1afeEMvaeBI3EAUj2eHo8viBKqFHutbi3RAog8Yi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "sheptian",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "c_password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "Register User"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/oauth/token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "LtVRM2QiqOs54qGQEf4q1afeEMvaeBI3EAUj2eHo8viBKqFHutbi3RAog8Yi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "GncAzYH4xxh7XM8478KEFkgnEWgLYtR62AB3adky",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"oauth",
+						"token"
+					]
+				},
+				"description": "Login Using Passport "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhkNTg2NmVlZjdkMDQ1Yjk5YjA4M2RhYjM4ZTIzZGVjYzJjZDRiYTEwN2U1MDBlODU4YzQ1YTkxZWExODNjMGIwMjI5MWM1ZmIzZTNlZmM0In0.eyJhdWQiOiIyIiwianRpIjoiOGQ1ODY2ZWVmN2QwNDViOTliMDgzZGFiMzhlMjNkZWNjMmNkNGJhMTA3ZTUwMGU4NThjNDVhOTFlYTE4M2MwYjAyMjkxYzVmYjNlM2VmYzQiLCJpYXQiOjE1NDQ1OTI3NTEsIm5iZiI6MTU0NDU5Mjc1MSwiZXhwIjoxNTc2MTI4NzUwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.MUKNuc3gppjOEz3LRWoReVaLOgSTFQaL7bK34DiBip-67S9w7pYeGPvSmLjumVBafGC99MClnUIQlT1YWyyZje2Zv4ocmDtPvVeEOtHziAFIZcaNqN1oMY6Ien0IOAWjJd4GHwcAL1DiovonSKcja2d6zU9pDEKQE18tPs9-bFSdirgVYIewkA2u8Pt__ADcxAMcXWDUH-x-1HP_KndabX638FvyGRf9hzG8pgRTd8aYt-y5uKPqmwT_BgTFJPNtoyojvUikOjlBkTWlk66MCYdbwNLr5cfZHLHNoJnoZloTMyCxQ2btRob2i_nW8gB9GB6nkpFJixy3PPKNgwIPj7MviVmAEkq6xCGcExJPjro4lIrCQEaiY_FnZ84SCwT_gxp86tL8UAFC5JmVUGAFOntx4jpPNRkfPSwSys9WnYhYLWhPCr34IjzAiKZPZZBTe6NeHgwyf79SKkcZz4kgdSSxJH3cgveOVcbn2bbExG7w7X1vBymubpTzhX6h2H5tkemRxB7fQkRssI8p_3ob0z9EqYn_Vaehx8PnRyZ8HNFLIZ1o6SFlkTRS2sYx10EGSWVBE9RcWUW2oSpjFkgoDUh7S6WH3C7Wi7T4_cx5IQb9vfVMLY2yfkV4hSvy9d4CWIJ3GdJfPoceCyVzMhjCvyQl9kKq04pD4WFiZMg-urA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				},
+				"description": "Get all product"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhkNTg2NmVlZjdkMDQ1Yjk5YjA4M2RhYjM4ZTIzZGVjYzJjZDRiYTEwN2U1MDBlODU4YzQ1YTkxZWExODNjMGIwMjI5MWM1ZmIzZTNlZmM0In0.eyJhdWQiOiIyIiwianRpIjoiOGQ1ODY2ZWVmN2QwNDViOTliMDgzZGFiMzhlMjNkZWNjMmNkNGJhMTA3ZTUwMGU4NThjNDVhOTFlYTE4M2MwYjAyMjkxYzVmYjNlM2VmYzQiLCJpYXQiOjE1NDQ1OTI3NTEsIm5iZiI6MTU0NDU5Mjc1MSwiZXhwIjoxNTc2MTI4NzUwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.MUKNuc3gppjOEz3LRWoReVaLOgSTFQaL7bK34DiBip-67S9w7pYeGPvSmLjumVBafGC99MClnUIQlT1YWyyZje2Zv4ocmDtPvVeEOtHziAFIZcaNqN1oMY6Ien0IOAWjJd4GHwcAL1DiovonSKcja2d6zU9pDEKQE18tPs9-bFSdirgVYIewkA2u8Pt__ADcxAMcXWDUH-x-1HP_KndabX638FvyGRf9hzG8pgRTd8aYt-y5uKPqmwT_BgTFJPNtoyojvUikOjlBkTWlk66MCYdbwNLr5cfZHLHNoJnoZloTMyCxQ2btRob2i_nW8gB9GB6nkpFJixy3PPKNgwIPj7MviVmAEkq6xCGcExJPjro4lIrCQEaiY_FnZ84SCwT_gxp86tL8UAFC5JmVUGAFOntx4jpPNRkfPSwSys9WnYhYLWhPCr34IjzAiKZPZZBTe6NeHgwyf79SKkcZz4kgdSSxJH3cgveOVcbn2bbExG7w7X1vBymubpTzhX6h2H5tkemRxB7fQkRssI8p_3ob0z9EqYn_Vaehx8PnRyZ8HNFLIZ1o6SFlkTRS2sYx10EGSWVBE9RcWUW2oSpjFkgoDUh7S6WH3C7Wi7T4_cx5IQb9vfVMLY2yfkV4hSvy9d4CWIJ3GdJfPoceCyVzMhjCvyQl9kKq04pD4WFiZMg-urA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Product 10",
+							"type": "text"
+						},
+						{
+							"key": "detail",
+							"value": "ini adalah product 10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				},
+				"description": "Add product"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/products/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhkNTg2NmVlZjdkMDQ1Yjk5YjA4M2RhYjM4ZTIzZGVjYzJjZDRiYTEwN2U1MDBlODU4YzQ1YTkxZWExODNjMGIwMjI5MWM1ZmIzZTNlZmM0In0.eyJhdWQiOiIyIiwianRpIjoiOGQ1ODY2ZWVmN2QwNDViOTliMDgzZGFiMzhlMjNkZWNjMmNkNGJhMTA3ZTUwMGU4NThjNDVhOTFlYTE4M2MwYjAyMjkxYzVmYjNlM2VmYzQiLCJpYXQiOjE1NDQ1OTI3NTEsIm5iZiI6MTU0NDU5Mjc1MSwiZXhwIjoxNTc2MTI4NzUwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.MUKNuc3gppjOEz3LRWoReVaLOgSTFQaL7bK34DiBip-67S9w7pYeGPvSmLjumVBafGC99MClnUIQlT1YWyyZje2Zv4ocmDtPvVeEOtHziAFIZcaNqN1oMY6Ien0IOAWjJd4GHwcAL1DiovonSKcja2d6zU9pDEKQE18tPs9-bFSdirgVYIewkA2u8Pt__ADcxAMcXWDUH-x-1HP_KndabX638FvyGRf9hzG8pgRTd8aYt-y5uKPqmwT_BgTFJPNtoyojvUikOjlBkTWlk66MCYdbwNLr5cfZHLHNoJnoZloTMyCxQ2btRob2i_nW8gB9GB6nkpFJixy3PPKNgwIPj7MviVmAEkq6xCGcExJPjro4lIrCQEaiY_FnZ84SCwT_gxp86tL8UAFC5JmVUGAFOntx4jpPNRkfPSwSys9WnYhYLWhPCr34IjzAiKZPZZBTe6NeHgwyf79SKkcZz4kgdSSxJH3cgveOVcbn2bbExG7w7X1vBymubpTzhX6h2H5tkemRxB7fQkRssI8p_3ob0z9EqYn_Vaehx8PnRyZ8HNFLIZ1o6SFlkTRS2sYx10EGSWVBE9RcWUW2oSpjFkgoDUh7S6WH3C7Wi7T4_cx5IQb9vfVMLY2yfkV4hSvy9d4CWIJ3GdJfPoceCyVzMhjCvyQl9kKq04pD4WFiZMg-urA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				},
+				"description": "Show product"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/products/1?name=chane name&detail=tes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhkNTg2NmVlZjdkMDQ1Yjk5YjA4M2RhYjM4ZTIzZGVjYzJjZDRiYTEwN2U1MDBlODU4YzQ1YTkxZWExODNjMGIwMjI5MWM1ZmIzZTNlZmM0In0.eyJhdWQiOiIyIiwianRpIjoiOGQ1ODY2ZWVmN2QwNDViOTliMDgzZGFiMzhlMjNkZWNjMmNkNGJhMTA3ZTUwMGU4NThjNDVhOTFlYTE4M2MwYjAyMjkxYzVmYjNlM2VmYzQiLCJpYXQiOjE1NDQ1OTI3NTEsIm5iZiI6MTU0NDU5Mjc1MSwiZXhwIjoxNTc2MTI4NzUwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.MUKNuc3gppjOEz3LRWoReVaLOgSTFQaL7bK34DiBip-67S9w7pYeGPvSmLjumVBafGC99MClnUIQlT1YWyyZje2Zv4ocmDtPvVeEOtHziAFIZcaNqN1oMY6Ien0IOAWjJd4GHwcAL1DiovonSKcja2d6zU9pDEKQE18tPs9-bFSdirgVYIewkA2u8Pt__ADcxAMcXWDUH-x-1HP_KndabX638FvyGRf9hzG8pgRTd8aYt-y5uKPqmwT_BgTFJPNtoyojvUikOjlBkTWlk66MCYdbwNLr5cfZHLHNoJnoZloTMyCxQ2btRob2i_nW8gB9GB6nkpFJixy3PPKNgwIPj7MviVmAEkq6xCGcExJPjro4lIrCQEaiY_FnZ84SCwT_gxp86tL8UAFC5JmVUGAFOntx4jpPNRkfPSwSys9WnYhYLWhPCr34IjzAiKZPZZBTe6NeHgwyf79SKkcZz4kgdSSxJH3cgveOVcbn2bbExG7w7X1vBymubpTzhX6h2H5tkemRxB7fQkRssI8p_3ob0z9EqYn_Vaehx8PnRyZ8HNFLIZ1o6SFlkTRS2sYx10EGSWVBE9RcWUW2oSpjFkgoDUh7S6WH3C7Wi7T4_cx5IQb9vfVMLY2yfkV4hSvy9d4CWIJ3GdJfPoceCyVzMhjCvyQl9kKq04pD4WFiZMg-urA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Product 1 Updated",
+							"type": "text"
+						},
+						{
+							"key": "detail",
+							"value": "Product 1 saya update",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products/1?name=chane name&detail=tes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "chane name"
+						},
+						{
+							"key": "detail",
+							"value": "tes"
+						}
+					]
+				},
+				"description": "Update Product"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/products/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhkNTg2NmVlZjdkMDQ1Yjk5YjA4M2RhYjM4ZTIzZGVjYzJjZDRiYTEwN2U1MDBlODU4YzQ1YTkxZWExODNjMGIwMjI5MWM1ZmIzZTNlZmM0In0.eyJhdWQiOiIyIiwianRpIjoiOGQ1ODY2ZWVmN2QwNDViOTliMDgzZGFiMzhlMjNkZWNjMmNkNGJhMTA3ZTUwMGU4NThjNDVhOTFlYTE4M2MwYjAyMjkxYzVmYjNlM2VmYzQiLCJpYXQiOjE1NDQ1OTI3NTEsIm5iZiI6MTU0NDU5Mjc1MSwiZXhwIjoxNTc2MTI4NzUwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.MUKNuc3gppjOEz3LRWoReVaLOgSTFQaL7bK34DiBip-67S9w7pYeGPvSmLjumVBafGC99MClnUIQlT1YWyyZje2Zv4ocmDtPvVeEOtHziAFIZcaNqN1oMY6Ien0IOAWjJd4GHwcAL1DiovonSKcja2d6zU9pDEKQE18tPs9-bFSdirgVYIewkA2u8Pt__ADcxAMcXWDUH-x-1HP_KndabX638FvyGRf9hzG8pgRTd8aYt-y5uKPqmwT_BgTFJPNtoyojvUikOjlBkTWlk66MCYdbwNLr5cfZHLHNoJnoZloTMyCxQ2btRob2i_nW8gB9GB6nkpFJixy3PPKNgwIPj7MviVmAEkq6xCGcExJPjro4lIrCQEaiY_FnZ84SCwT_gxp86tL8UAFC5JmVUGAFOntx4jpPNRkfPSwSys9WnYhYLWhPCr34IjzAiKZPZZBTe6NeHgwyf79SKkcZz4kgdSSxJH3cgveOVcbn2bbExG7w7X1vBymubpTzhX6h2H5tkemRxB7fQkRssI8p_3ob0z9EqYn_Vaehx8PnRyZ8HNFLIZ1o6SFlkTRS2sYx10EGSWVBE9RcWUW2oSpjFkgoDUh7S6WH3C7Wi7T4_cx5IQb9vfVMLY2yfkV4hSvy9d4CWIJ3GdJfPoceCyVzMhjCvyQl9kKq04pD4WFiZMg-urA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				},
+				"description": "Save product"
+			},
+			"response": []
+		}
+	]
+}
